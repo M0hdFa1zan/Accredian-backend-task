@@ -6,7 +6,9 @@ require('dotenv').config();
 const db = require('./config/db');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://accredian-backend-task-gnwr.onrender.com'
+}));
 app.use(bodyParser.json());
 app.use('/api/refer', referralRoutes);
 
